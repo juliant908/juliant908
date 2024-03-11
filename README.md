@@ -15,4 +15,4 @@
 - NextJS
 - Vite
 
-## Conoce más de mi dentro de este portafolio!
+## Conoce más de mí dentro de mi portafolio!
