@@ -17,4 +17,4 @@
 
 ## Conoce más de mí dentro de mi portafolio!
 
-Conoce más (aquí)[https://portfolio-juliant908.vercel.app/]
+Conoce más [aquí](https://portfolio-juliant908.vercel.app/)
