@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Custom Software Engineering Associate",
+    company: "Accenture",
+    description:
+      "Me centro principalmente en el desarrollo front-end utilizando Angular, he generado código de alta calidad y he participado en la revisión de código de otros compañeros. He trabajado en proyectos de gran envergadura y he colaborado con equipos de diferentes países.",
+    link: "https://accenture.com/co-es",
+  },
+  {
+    date: "Septiembre 2021",
+    title: "Consultor para PYMES en Medellín",
+    company: "Universidad Nacional de Colombia",
+    description:
+      "Realicé un proyecto de consultoría para varias PYMES en Medellín, en el que se buscaba mejorar la eficiencia de la empresa, entrenando a los equipos en finanzas, mercadeo, operaciones y estrategia.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
