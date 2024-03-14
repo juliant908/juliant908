@@ -1,28 +1,37 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguageToggle from "./LanguageToggle.astro";
+import {getLangFromUrl, useTranslations} from "../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const getNavLabel = () => {
+  return lang === "en"
+    ? t("experience").split(" ")[1]
+    : t("experience").split(" ")[0];
+};
 const navItems = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: `${getNavLabel()}`,
+    label: `${t("experience")}`,
+    url: `/${lang}/#${t("experience")}`,
   },
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
+    title: `${t("projects")}`,
+    label: `${t("projects")}`,
+    url: `/${lang}/#${t("projects")}`,
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: `${t("about")}`,
+    label: `${t("about")}`,
+    url: `/${lang}/#${t("about")}`,
   },
   {
-    title: "Contacto",
-    label: "contacto",
+    title: `${t("hero.contact")}`,
+    label: `${t("hero.contact")}`,
     url: "mailto:juliant908@gmail.com",
   },
-]
+];
 ---
 
 <header
@@ -44,56 +53,57 @@ const navItems = [
     }
     <ThemeToggle />
   </nav>
+  <LanguageToggle />
 </header>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
-
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-300/80")
+              item.classList.add("text-yellow-300/80");
             } else {
-              item.classList.remove("text-yellow-300/80")
+              item.classList.remove("text-yellow-300/80");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>
-  nav {
+  nav, .language-toggle {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
+  
 
   @keyframes nav-shadown {
     to {

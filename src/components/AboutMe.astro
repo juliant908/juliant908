@@ -1,30 +1,44 @@
 ---
- const personalImageAlt = "Julián Tibana"
+const personalImageAlt = "Julián Tibana";
+
+import {getLangFromUrl, useTranslations} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-50 dark:text-gray-200 md:flex-row">
+<article
+  class="flex flex-col items-center justify-center gap-8 text-gray-50 dark:text-gray-200 md:flex-row"
+>
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-200 dark:[&>p>strong]:text-blue-400 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
-      Mi nombre es Julián Tibana, soy ingeniero de profesión y también hago contenido de gastronomía en mis tiempos libres (@julian.tibana en todas partes) <strong
-        >actualmente me desempeño como desarrollador front-end, sin embargo, tengo todo lo necesario para tomar retos full stack.</strong
-      >
+      {t("about.subtitle1")}<strong>{t("about.subtitle2")}</strong>
     </p>
 
     <p>
-      Algunos de mis éxitos incluyen <strong
-        >crear una de las plataformas para empresas más importantes de Guatemala.</strong
-      > Me enorgullece saber que hoy en día hay miles y miles de empresas que utilizan mi trabajo para mejorar su productividad.
+      {t("about.achievements")}<strong>{t("about.achievements1")}</strong>{
+        t("about.achievements2")
+      }
     </p>
 
     <p>
-      Como creador de contenido, <strong
-        >cuento con una comunidad de más de 32.000 personas a través de distintas plataformas <em class="italic">empezando desde 0</em> en Instagram, Tiktok y recientemente en Youtube.</strong
-      > Mi objetivo es compartir mi gusto por la gastronomía con el mundo.
+      {t("about.achievements3")}
+      <strong
+        >{t("about.achievements4")}<em class="italic"
+          >{t("about.achievements5")}</em
+        >{t("about.achievements6")}</strong
+      >{t("about.achievements7")}
     </p>
   </div>
 
-  <img width="200" height="200" src="/me.jpeg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
-
+  <img
+    width="200"
+    height="200"
+    src="/me.jpeg"
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+    style="object-position: 50% 50%"
+  />
 </article>

@@ -1,0 +1,25 @@
+---
+import {getLangFromUrl} from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const getButtonText = (lang: string) => {
+ return lang === "en" ? "Español 🇪🇸" : "English 🇬🇧";
+};
+---
+
+<div
+ class="language-toggle absolute top-0 right-3 flex px-3 text-sm font-medium rounded-full text-gray-100 dark:text-gray-200 justify-center items-center"
+>
+ <button
+  class="relative block px-2 py-2 transition hover:text-yellow-300 dark:hover:text-yellow-300"
+  >{getButtonText(lang)}</button
+ >
+</div>
+
+<script>
+ const button = document.querySelector(".language-toggle button");
+ button?.addEventListener("click", () => {
+  location.href = location.href.includes("/en")
+   ? location.href.replace("/en", "/es")
+   : location.href.replace("/es", "/en");
+ });
+</script>

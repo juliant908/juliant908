@@ -1,0 +1,55 @@
+---
+import {getLangFromUrl, useTranslations} from "@/i18n/utils";
+
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("meta.title")} description={t("meta.description")}>
+ <main class="px-4">
+  <SectionContainer class="py-16 md:py-36">
+   <Hero />
+  </SectionContainer>
+ </main>
+ <div class="space-y-24">
+  <SectionContainer id={t("experience")}>
+   <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-50 dark:text-white"
+   >
+    <Briefcase class="size-8" />
+    {t("experience")}
+   </h2>
+   <Experience />
+  </SectionContainer>
+
+  <SectionContainer id={t("projects")}>
+   <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-50 dark:text-white"
+   >
+    <CodeIcon class="size-7" />
+    {t("projects")}
+   </h2>
+   <Projects />
+  </SectionContainer>
+
+  <SectionContainer id={t("about")}>
+   <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-gray-50 dark:text-white"
+   >
+    <ProfileCheck class="size-8" />
+    {t("about")}
+   </h2>
+   <AboutMe />
+  </SectionContainer>
+ </div>
+</Layout>

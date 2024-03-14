@@ -1,5 +1,8 @@
 ---
-const currentYear = new Date().getFullYear()
+import {getLangFromUrl, useTranslations} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
@@ -17,11 +20,15 @@ const currentYear = new Date().getFullYear()
       class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-50 dark:text-white/90 sm:mt-0"
     >
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6"
+          >{t("about")}</a
+        >
       </li>
       <li>
-        <a id="contacto" href="mailto:juliant908@gmail.com" class="hover:underline"
-          >Contacto</a
+        <a
+          id="contacto"
+          href="mailto:juliant908@gmail.com"
+          class="hover:underline">{t('hero.contact')}</a
         >
       </li>
     </ul>

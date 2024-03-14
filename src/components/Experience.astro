@@ -1,22 +1,24 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
+import {getLangFromUrl, useTranslations} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const EXPERIENCIE = [
   {
-    date: "Actualmente...",
+    date: `${t("experience.date1")}`,
     title: "Custom Software Engineering Associate",
     company: "Accenture",
-    description:
-      "Me centro principalmente en el desarrollo front-end utilizando Angular, he generado código de alta calidad y he participado en la revisión de código de otros compañeros. He trabajado en proyectos de gran envergadura y he colaborado con equipos de diferentes países.",
-    link: "https://accenture.com/co-es",
+    description: `${t("experience.description1")}`,
+    link: `${t("experience.link1")}`,
   },
   {
-    date: "Septiembre 2021",
-    title: "Consultor para PYMES en Medellín",
-    company: "Universidad Nacional de Colombia",
-    description:
-      "Realicé un proyecto de consultoría para varias PYMES en Medellín, en el que se buscaba mejorar la eficiencia de la empresa, entrenando a los equipos en finanzas, mercadeo, operaciones y estrategia.",
+    date: `${t("experience.date2")}`,
+    title: `${t("experience.title2")}`,
+    company: `${t("experience.company2")}`,
+    description: `${t("experience.description2")}`,
   },
-]
+];
 ---
 
 <ol class="relative mt-16">
