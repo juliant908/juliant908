@@ -43,7 +43,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-300 dark:hover:text-yellow-300"
+          class="relative block px-2 text-xs md:text-sm py-2 transition hover:text-yellow-300 dark:hover:text-yellow-300"
           aria-label={link.label}
           href={link.url}
         >
@@ -98,7 +98,7 @@ const navItems = [
 </script>
 
 <style>
-  nav, .language-toggle {
+  nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
