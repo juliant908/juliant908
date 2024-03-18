@@ -7,7 +7,7 @@ const LANGUAGES = {
 };
 const lang = getLangFromUrl(Astro.url);
 const getButtonText = (lang: string) => {
-  return LANGUAGES[lang as keyof typeof LANGUAGES];
+  return (lang === 'es') ? LANGUAGES['en'] : LANGUAGES['es'];
 };
 ---
 
