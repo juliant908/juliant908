@@ -46,6 +46,8 @@ export const ui = {
   "projects2.description": "Digital menu for restaurants, with the possibility to scan a QR code and see the menu on your mobile phone. It also contains 2 versions, one in Next.JS and one in Angular 17.",
   "projects3.title": "Corporate website of Coltrópicos in Guarne, Antioquia",
   "projects3.description": "Corporate website of Coltrópicos, a company dedicated to the export of exotic fruits in Guarne, Antioquia. Made with AstroJS and Tailwind CSS. It contains general company information and a product catalog.",
+  "projects4.title": "Tailwind CSS plugin",
+  "projects4.description": "Plugin for the most famous CSS framework in the world that allows you to add a custom animations for your website. Make your website more attractive and dynamic with this plugin!",
  },
  es: {
   'meta.title': 'Porfolio de Julián Tibana - Desarrollador y Programador Web con 2+ años de experiencia',
@@ -86,5 +88,7 @@ export const ui = {
   "projects2.description": "Menú digital para restaurantes, con la posibilidad de escanear un código QR y ver el menú en el teléfono móvil. También contiene 2 versiones, una en Next.JS y otra en Angular 17.",
   "projects3.title": "Página web corporativa de Coltrópicos en Guarne, Antioquia",
   "projects3.description": "Página web corporativa de Coltrópicos, una empresa dedicada a la exportación de frutas exóticas en Guarne, Antioquia. Realizada con AstroJS y Tailwind CSS. Contiene información general de la empresa y un catálogo de productos.",
+  "projects4.title": "Plugin para Tailwind CSS ",
+  "projects4.description": "Plugin para el framework más famoso del mundo que te permite añadir animaciones personalizadas a tu sitio web. ¡Haz tu sitio web más atractivo y dinámico con este plugin!",
  },
 } as const;

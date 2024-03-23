@@ -8,6 +8,7 @@ import Angular from "./icons/Angular.astro";
 import React from "./icons/React.astro";
 import Svelte from "./icons/Svelte.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import JavascriptIcon from "./icons/Javascript.astro";
 import {getLangFromUrl, useTranslations} from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -43,6 +44,11 @@ const TAGS = {
     class: "bg-[#757575] text-white",
     icon: AstroIcon,
   },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-[#DBC200] text-white",
+    icon: JavascriptIcon,
+  },
 };
 const PROJECTS = [
   {
@@ -55,19 +61,25 @@ const PROJECTS = [
   },
   {
     title: `${t("projects2.title")}`,
-    description:
-      `${t("projects2.description")}`,
+    description: `${t("projects2.description")}`,
     link: "https://digital-menu-tba.netlify.app/home?restaurant=la-cueva-de-la-rata",
     image: "/projects/menuDG.png",
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.ANGULAR],
   },
   {
     title: `${t("projects3.title")}`,
-    description:
-      `${t("projects3.description")}`,
+    description: `${t("projects3.description")}`,
     link: "https://coltropicos.com/",
     image: "/projects/coltropicosHomePage.png",
     tags: [TAGS.SVELTE, TAGS.TAILWIND, TAGS.ASTRO],
+  },
+  {
+    title: `${t("projects4.title")}`,
+    description: `${t("projects4.description")}`,
+    link: "https://tailwind-animations-website.vercel.app/",
+    github: "https://github.com/juliant908/amazing-tailwind-animations",
+    image: "/projects/Tailwind-animations.png",
+    tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.JAVASCRIPT],
   },
 ];
 ---
