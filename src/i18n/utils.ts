@@ -1,4 +1,4 @@
-import {type TranslationKeys, ui, defaultLang, type Meta, type Hero, type About, type Experience, type Projects } from './ui';
+import { type TranslationKeys, type TranslationType, ui, defaultLang } from './ui';
 
 
 export function getLangFromUrl(url: URL) {
@@ -9,20 +9,21 @@ export function getLangFromUrl(url: URL) {
 
 
 export class Translate {
+ private lang: keyof typeof ui
 
-
- private lang;
  constructor(lang: string) {
-  this.lang = lang
+  this.lang = lang in ui ? lang as keyof typeof ui : defaultLang;
  }
 
- public getTranslations(){
-  const lang = this.lang
-  return ui[lang as keyof typeof ui] || ui[defaultLang]
+ public getTranslations() {
+  return ui[this.lang]
  }
 
- public get<TranslationKey extends TranslationKeys>(key: TranslationKey): TranslationKey extends 'meta' ? Meta : TranslationKey extends 'hero' ? Hero : TranslationKey extends 'experience' ? Experience : TranslationKey extends 'about' ? About : TranslationKey extends 'projects' ? Projects : never {
-  // @ts-ignore
-  return this.getTranslations()[key]
+ public get<TranslationKey extends TranslationKeys>(key: TranslationKey): TranslationType<TranslationKey> {
+  const translation = this.getTranslations()[key];
+  if (!translation) {
+   throw new Error(`Translation for key "${key}" not found.`);
+  }
+  return translation as TranslationType<TranslationKey>;
  }
 }

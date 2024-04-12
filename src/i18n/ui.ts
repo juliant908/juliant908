@@ -203,3 +203,10 @@ export interface Projects {
 }
 
 export type TranslationKeys = 'meta' | 'hero' | 'experience' | 'about' | 'projects';
+
+export type TranslationType<T> = T extends 'meta' ? Meta :
+ T extends 'hero' ? Hero :
+ T extends 'experience' ? Experience :
+ T extends 'about' ? About :
+ T extends 'projects' ? Projects :
+ never;
