@@ -48,6 +48,8 @@ export const ui = {
   "projects3.description": "Corporate website of Coltrópicos, a company dedicated to the export of exotic fruits in Guarne, Antioquia. Made with AstroJS and Tailwind CSS. It contains general company information and a product catalog.",
   "projects4.title": "Tailwind CSS plugin",
   "projects4.description": "Plugin for the most famous CSS framework in the world that allows you to add a custom animations for your website. Make your website more attractive and dynamic with this plugin!",
+  "projects5.title": "IMDb redesign",
+  "projects5.description": "IMDb redesign project with Angular and Tailwind CSS. It contains a homepage, designed by the Youtuber Juxtopposed. Discover how IMDb would look like if it were redesigned today!",
  },
  es: {
   'meta.title': 'Porfolio de Julián Tibana - Desarrollador y Programador Web con 2+ años de experiencia',
@@ -90,5 +92,7 @@ export const ui = {
   "projects3.description": "Página web corporativa de Coltrópicos, una empresa dedicada a la exportación de frutas exóticas en Guarne, Antioquia. Realizada con AstroJS y Tailwind CSS. Contiene información general de la empresa y un catálogo de productos.",
   "projects4.title": "Plugin para Tailwind CSS ",
   "projects4.description": "Plugin para el framework más famoso del mundo que te permite añadir animaciones personalizadas a tu sitio web. ¡Haz tu sitio web más atractivo y dinámico con este plugin!",
+  "projects5.title": "Rediseño de IMDb",
+  "projects5.description": "Proyecto de rediseño de IMDb con Angular y Tailwind CSS. Contiene una página de inicio, diseñada por la Youtuber Juxtopposed. ¡Descubre cómo se vería IMDb si fuera rediseñado hoy!",
  },
 } as const;
