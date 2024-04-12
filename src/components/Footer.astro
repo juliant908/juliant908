@@ -1,8 +1,9 @@
 ---
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import {getLangFromUrl, Translate} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const translate = new Translate(lang);
+const translations = translate.getTranslations();
 ---
 
 <footer
@@ -21,14 +22,14 @@ const t = useTranslations(lang);
     >
       <li>
         <a href="/#sobre-mi" class="hover:underline me-4 md:me-6"
-          >{t("about")}</a
+          >{translations?.about?.title}</a
         >
       </li>
       <li>
         <a
           id="contacto"
           href="mailto:juliant908@gmail.com"
-          class="hover:underline">{t('hero.contact')}</a
+          class="hover:underline">{translations?.hero?.contact}</a
         >
       </li>
     </ul>

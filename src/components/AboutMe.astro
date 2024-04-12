@@ -1,10 +1,11 @@
 ---
 const personalImageAlt = "Julián Tibana";
 
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import {getLangFromUrl, Translate} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const translate = new Translate(lang);
+const translations = translate.get("about");
 ---
 
 <article
@@ -14,22 +15,22 @@ const t = useTranslations(lang);
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-200 dark:[&>p>strong]:text-blue-400 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
-      {t("about.subtitle1")}<strong>{t("about.subtitle2")}</strong>
+      {translations?.subtitle1}<strong>{translations?.subtitle2}</strong>
     </p>
 
     <p>
-      {t("about.achievements")}<strong>{t("about.achievements1")}</strong>{
-        t("about.achievements2")
+      {translations?.achievements}<strong>{translations?.achievements1}</strong>{
+        translations?.achievements2
       }
     </p>
 
     <p>
-      {t("about.achievements3")}
+      {translations?.achievements3}
       <strong
-        >{t("about.achievements4")}<em class="italic"
-          >{t("about.achievements5")}</em
-        >{t("about.achievements6")}</strong
-      >{t("about.achievements7")}
+        >{translations?.achievements4}<em class="italic"
+          >{translations?.achievements5}</em
+        >{translations?.achievements6}</strong
+      >{translations?.achievements7}
     </p>
   </div>
 

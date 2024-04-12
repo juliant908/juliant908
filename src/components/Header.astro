@@ -1,34 +1,35 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
 import LanguageToggle from "./LanguageToggle.astro";
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import {getLangFromUrl, Translate} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const translate = new Translate(lang);
+const translations = translate.getTranslations();
 const getNavLabel = () => {
   return lang === "en"
-    ? t("experience").split(" ")[1]
-    : t("experience").split(" ")[0];
+    ? translations?.experience?.title?.split(" ")[1]
+    : translations?.experience?.title?.split(" ")[0];
 };
 const navItems = [
   {
     title: `${getNavLabel()}`,
-    label: `${t("experience")}`,
-    url: `/${lang}/#${t("experience")}`,
+    label: `${translations?.experience?.title}`,
+    url: `/${lang}/#${translations?.experience?.title}`,
   },
   {
-    title: `${t("projects")}`,
-    label: `${t("projects")}`,
-    url: `/${lang}/#${t("projects")}`,
+    title: `${translations?.projects.title}`,
+    label: `${translations?.projects.title}`,
+    url: `/${lang}/#${translations?.projects.title}`,
   },
   {
-    title: `${t("about")}`,
-    label: `${t("about")}`,
-    url: `/${lang}/#${t("about")}`,
+    title: `${translations?.about?.title}`,
+    label: `${translations?.about?.title}`,
+    url: `/${lang}/#${translations?.about?.title}`,
   },
   {
-    title: `${t("hero.contact")}`,
-    label: `${t("hero.contact")}`,
+    title: `${translations?.hero?.contact}`,
+    label: `${translations?.hero?.contact}`,
     url: "mailto:juliant908@gmail.com",
   },
 ];
@@ -103,7 +104,6 @@ const navItems = [
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
-  
 
   @keyframes nav-shadown {
     to {

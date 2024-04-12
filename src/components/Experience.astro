@@ -1,22 +1,23 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import {getLangFromUrl, Translate} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const translate = new Translate(lang);
+const translations = translate.get("experience");
 const EXPERIENCIE = [
   {
-    date: `${t("experience.date1")}`,
+    date: `${translations?.date1}`,
     title: "Custom Software Engineering Associate",
     company: "Accenture",
-    description: `${t("experience.description1")}`,
-    link: `${t("experience.link1")}`,
+    description: `${translations?.description1}`,
+    link: `${translations?.link1}`,
   },
   {
-    date: `${t("experience.date2")}`,
-    title: `${t("experience.title2")}`,
-    company: `${t("experience.company2")}`,
-    description: `${t("experience.description2")}`,
+    date: `${translations?.date2}`,
+    title: `${translations?.title2}`,
+    company: `${translations?.company2}`,
+    description: `${translations?.description2}`,
   },
 ];
 ---

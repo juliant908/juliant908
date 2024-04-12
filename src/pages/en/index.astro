@@ -1,5 +1,5 @@
 ---
-import {getLangFromUrl, useTranslations} from "@/i18n/utils";
+import {getLangFromUrl, Translate} from "@/i18n/utils";
 
 import Layout from "@/layouts/Layout.astro";
 import AboutMe from "@/components/AboutMe.astro";
@@ -12,42 +12,46 @@ import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const translate = new Translate(lang);
+const translations = translate.getTranslations();
 ---
 
-<Layout title={t("meta.title")} description={t("meta.description")}>
+<Layout
+ title={translations.meta?.title}
+ description={translations?.meta?.description}
+>
  <main class="px-4">
   <SectionContainer class="py-16 md:py-36">
    <Hero />
   </SectionContainer>
  </main>
  <div class="space-y-24">
-  <SectionContainer id={t("experience")}>
+  <SectionContainer id={translations?.experience?.title}>
    <h2
     class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-50 dark:text-white"
    >
     <Briefcase class="size-8" />
-    {t("experience")}
+    {translations?.experience?.title}
    </h2>
    <Experience />
   </SectionContainer>
 
-  <SectionContainer id={t("projects")}>
+  <SectionContainer id={translations?.projects?.title}>
    <h2
     class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-gray-50 dark:text-white"
    >
     <CodeIcon class="size-7" />
-    {t("projects")}
+    {translations?.projects?.title}
    </h2>
    <Projects />
   </SectionContainer>
 
-  <SectionContainer id={t("about")}>
+  <SectionContainer id={translations?.about?.title}>
    <h2
     class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-gray-50 dark:text-white"
    >
     <ProfileCheck class="size-8" />
-    {t("about")}
+    {translations?.about?.title}
    </h2>
    <AboutMe />
   </SectionContainer>

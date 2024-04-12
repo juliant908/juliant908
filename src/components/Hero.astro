@@ -5,10 +5,11 @@ import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
 
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import {getLangFromUrl, Translate} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const translate = new Translate(lang);
+const translations = translate.get("hero");
 ---
 
 <div class="max-w-xl">
@@ -24,28 +25,28 @@ const t = useTranslations(lang);
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>{t("hero.badge")}</Badge>
+      <Badge>{translations?.badge}</Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-50 sm:text-5xl dark:text-white"
   >
-    {t("hero.title")}
+    {translations.title}
   </h1>
   <p
     class="mt-6 text-xl text-gray-50 dark:[&>strong]:text-blue-950 [&>strong]:text-yellow-100 [&>strong]:font-semibold dark:text-gray-300"
   >
-    {t("hero.subtitle1")}
-    <strong>{t("hero.subtitle2")}</strong>{t("hero.subtitle3")}
+    {translations.subtitle1}
+    <strong>{translations.subtitle2}</strong>{translations.subtitle3}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:juliant908@gmail.com">
       <MailIcon class="size-4" />
-      {t("hero.contact")}
+      {translations.contact}
     </SocialPill>
     <SocialPill href="https://linkedin.com/in/julian-tibana">
       <LinkedInIcon class="size-4" />
-      {t("hero.linkedin")}
+      {translations.linkedin}
     </SocialPill>
   </nav>
 </div>
