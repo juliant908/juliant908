@@ -5,26 +5,26 @@ import {getLangFromUrl, Translate} from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const translate = new Translate(lang);
 const translations = translate.get("experience");
-const EXPERIENCIE = [
+const EXPERIENCE = [
   {
-    date: `${translations?.date1}`,
+    date: `${translations?.experience[0].date}`,
     title: "Custom Software Engineering Associate",
     company: "Accenture",
-    description: `${translations?.description1}`,
-    link: `${translations?.link1}`,
+    description: `${translations?.experience[0].description}`,
+    link: `${translations?.experience[0].link}`,
   },
   {
-    date: `${translations?.date2}`,
-    title: `${translations?.title2}`,
-    company: `${translations?.company2}`,
-    description: `${translations?.description2}`,
+    date: `${translations?.experience[1].date}`,
+    title: `${translations?.experience[1].title}`,
+    company: `${translations?.experience[1].company}`,
+    description: `${translations?.experience[1].description}`,
   },
 ];
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCE.map((experiencie) => (
       <li class="">
         <ExperienceItem {...experiencie} />
       </li>

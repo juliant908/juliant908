@@ -20,6 +20,7 @@ export const ui: UI = {
    subtitle3: "From Medellín, Colombia 🇨🇴.",
    contact: "Contact me",
    linkedin: "LinkedIn",
+   download: "Download CV",
   },
   about: {
    title: "About me",
@@ -36,39 +37,47 @@ export const ui: UI = {
   },
   experience: {
    title: "Professional Experience",
-   date1: "Currently...",
-   title1: "Custom Software Engineering Associate",
-   company1: "Accenture",
-   description1: "I focus primarily on front-end development using Angular, I have generated high quality code and have participated in code reviews of other colleagues. I have worked on large projects and collaborated with teams from different countries.",
-   link1: "https://accenture.com/co-es",
-   date2: "September 2021",
-   title2: "SME consultant in Medellín",
-   company2: "Universidad Nacional de Colombia",
-   description2: "I carried out a consulting project for several SMEs in Medellin, which sought to improve the efficiency of the company, training teams in finance, marketing, operations and strategy.",
+   experience: [
+    {
+     date: "Currently...",
+     title: "Custom Software Engineering Associate",
+     company: "Accenture",
+     description: "I focus primarily on front-end development using Angular, I have generated high quality code and have participated in code reviews of other colleagues. I have worked on large projects and collaborated with teams from different countries.",
+     link: "https://accenture.com/co-es",
+    },
+    {
+     date: "September 2021",
+     title: "SME consultant in Medellín",
+     company: "Universidad Nacional de Colombia",
+     description: "I carried out a consulting project for several SMEs in Medellin, which sought to improve the efficiency of the company, training teams in finance, marketing, operations and strategy.",
+    }
+   ],
    cta: "See more",
   },
   projects: {
    title: "Projects",
-   project1: {
-    title: "Spotify clone",
-    description: "Replica of the renowned Spotify application, made in two versions: one with React, Vite and Tailwind and another with Angular 17 and Tailwind.",
-   },
-   project2: {
-    title: "Digital menu for restaurants",
-    description: "Digital menu for restaurants, with the possibility to scan a QR code and see the menu on your mobile phone. It also contains 2 versions, one in Next.JS and one in Angular 17.",
-   },
-   project3: {
-    title: "Corporate website of Coltrópicos in Guarne, Antioquia",
-    description: "Corporate website of Coltrópicos, a company dedicated to the export of exotic fruits in Guarne, Antioquia. Made with AstroJS and Tailwind CSS. It contains general company information and a product catalog.",
-   },
-   project4: {
-    title: "Tailwind CSS plugin",
-    description: "Plugin for the most famous CSS framework in the world that allows you to add a custom animations for your website. Make your website more attractive and dynamic with this plugin!",
-   },
-   project5: {
-    title: "IMDb redesign",
-    description: "IMDb redesign project with Angular and Tailwind CSS. It contains a homepage, designed by the Youtuber Juxtopposed. Discover how IMDb would look like if it were redesigned today!",
-   }
+   projects: [
+    {
+     title: "Spotify clone",
+     description: "Replica of the renowned Spotify application, made in two versions: one with React, Vite and Tailwind and another with Angular 17 and Tailwind.",
+    },
+    {
+     title: "Digital menu for restaurants",
+     description: "Digital menu for restaurants, with the possibility to scan a QR code and see the menu on your mobile phone. Made with Angular 18, Tailwind for styling, supabase for the backend and cloudflare for cloud computing",
+    },
+    {
+     title: "Corporate website of Coltrópicos in Guarne, Antioquia",
+     description: "Corporate website of Coltrópicos, a company dedicated to the export of exotic fruits in Guarne, Antioquia. Made with AstroJS and Tailwind CSS. It contains general company information and a product catalog.",
+    },
+    {
+     title: "Tailwind CSS plugin",
+     description: "Plugin for the most famous CSS framework in the world that allows you to add a custom animations for your website. Make your website more attractive and dynamic with this plugin!",
+    },
+    {
+     title: "IMDb redesign",
+     description: "IMDb redesign project with Angular and Tailwind CSS. It contains a homepage, designed by the Youtuber Juxtopposed. Discover how IMDb would look like if it were redesigned today!",
+    }
+   ]
   }
  },
  es: {
@@ -84,6 +93,7 @@ export const ui: UI = {
    subtitle3: "de Medellín, Colombia 🇨🇴.",
    contact: "Contáctame",
    linkedin: "LinkedIn",
+   download: "Descargar CV",
   },
   about: {
    title: "Sobre mí",
@@ -100,39 +110,47 @@ export const ui: UI = {
   },
   experience: {
    title: "Experiencia laboral",
-   date1: "Actualmente...",
-   title1: "Custom Software Engineering Associate",
-   company1: "Accenture",
-   description1: "Me centro principalmente en el desarrollo front-end utilizando Angular, he generado código de alta calidad y he participado en la revisión de código de otros compañeros. He trabajado en proyectos de gran envergadura y he colaborado con equipos de diferentes países.",
-   link1: "https://accenture.com/co-es",
-   date2: "Septiembre 2021",
-   title2: "Consultor para PYMES en Medellín",
-   company2: "Universidad Nacional de Colombia",
-   description2: "Realicé un proyecto de consultoría para varias PYMES en Medellín, en el que se buscaba mejorar la eficiencia de la empresa, entrenando a los equipos en finanzas, mercadeo, operaciones y estrategia.",
+   experience: [
+    {
+     date: "Actualmente...",
+     title: "Custom Software Engineering Associate",
+     company: "Accenture",
+     description: "Me centro principalmente en el desarrollo front-end utilizando Angular, he generado código de alta calidad y he participado en la revisión de código de otros compañeros. He trabajado en proyectos de gran envergadura y he colaborado con equipos de diferentes países.",
+     link: "https://accenture.com/co-es",
+    },
+    {
+     date: "Septiembre 2021",
+     title: "Consultor para PYMES en Medellín",
+     company: "Universidad Nacional de Colombia",
+     description: "Realicé un proyecto de consultoría para varias PYMES en Medellín, en el que se buscaba mejorar la eficiencia de la empresa, entrenando a los equipos en finanzas, mercadeo, operaciones y estrategia.",
+    }
+   ],
    cta: "Saber más",
   },
   projects: {
    title: "Proyectos",
-   project1: {
-    title: "Clon de Spotify",
-    description: "Réplica de la reconocida aplicación Spotify, realizado en dos versiones: una con React, Vite y Tailwind y otra con Angular 17 y Tailwind.",
-   },
-   project2: {
-    title: "Menú digital para restaurantes",
-    description: "Menú digital para restaurantes, con la posibilidad de escanear un código QR y ver el menú en el teléfono móvil. También contiene 2 versiones, una en Next.JS y otra en Angular 17.",
-   },
-   project3: {
-    title: "Página web corporativa de Coltrópicos en Guarne, Antioquia",
-    description: "Página web corporativa de Coltrópicos, una empresa dedicada a la exportación de frutas exóticas en Guarne, Antioquia. Realizada con AstroJS y Tailwind CSS. Contiene información general de la empresa y un catálogo de productos.",
-   },
-   project4: {
-    title: "Plugin para Tailwind CSS ",
-    description: "Plugin para el framework más famoso del mundo que te permite añadir animaciones personalizadas a tu sitio web. ¡Haz tu sitio web más atractivo y dinámico con este plugin!",
-   },
-   project5: {
-    title: "Rediseño de IMDb",
-    description: "Proyecto de rediseño de IMDb con Angular y Tailwind CSS. Contiene una página de inicio, diseñada por la Youtuber Juxtopposed. ¡Descubre cómo se vería IMDb si fuera rediseñado hoy!",
-   }
+   projects: [
+    {
+     title: "Clon de Spotify",
+     description: "Réplica de la reconocida aplicación Spotify, realizado en dos versiones: una con React, Vite y Tailwind y otra con Angular 17 y Tailwind.",
+    },
+    {
+     title: "Menú digital para restaurantes",
+     description: "Menú digital para restaurantes, con la posibilidad de escanear un código QR y ver el menú en el teléfono móvil. Realizado con Angular 18, Tailwind css para los estilos, supabase para el backend y cloudflare para la computación en la nube.",
+    },
+    {
+     title: "Página web corporativa de Coltrópicos en Guarne, Antioquia",
+     description: "Página web corporativa de Coltrópicos, una empresa dedicada a la exportación de frutas exóticas en Guarne, Antioquia. Realizada con AstroJS y Tailwind CSS. Contiene información general de la empresa y un catálogo de productos.",
+    },
+    {
+     title: "Plugin para Tailwind CSS ",
+     description: "Plugin para el framework más famoso del mundo que te permite añadir animaciones personalizadas a tu sitio web. ¡Haz tu sitio web más atractivo y dinámico con este plugin!",
+    },
+    {
+     title: "Rediseño de IMDb",
+     description: "Proyecto de rediseño de IMDb con Angular y Tailwind CSS. Contiene una página de inicio, diseñada por la Youtuber Juxtopposed. ¡Descubre cómo se vería IMDb si fuera rediseñado hoy!",
+    }
+   ],
   }
  }
 }
@@ -166,16 +184,16 @@ export interface About {
 
 export interface Experience {
  title: string;
- date1: string;
- title1: string;
- company1: string;
- description1: string;
- link1: string;
- date2: string;
- title2: string;
- company2: string;
- description2: string;
+ experience: ExperienceInfo[];
  cta: string;
+}
+
+export interface ExperienceInfo {
+ date: string;
+ title: string;
+ company: string;
+ description: string;
+ link?: string;
 }
 
 export interface Hero {
@@ -186,6 +204,7 @@ export interface Hero {
  subtitle3: string;
  contact: string;
  linkedin: string;
+ download: string;
 }
 
 export interface Meta {
@@ -195,11 +214,12 @@ export interface Meta {
 
 export interface Projects {
  title: string;
- project1: Meta;
- project2: Meta;
- project3: Meta;
- project4: Meta;
- project5: Meta;
+ projects: ProjectInfo[];
+}
+
+export interface ProjectInfo {
+ title: string;
+ description: string;
 }
 
 export type TranslationKeys = 'meta' | 'hero' | 'experience' | 'about' | 'projects';

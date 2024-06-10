@@ -9,6 +9,10 @@ import React from "./icons/React.astro";
 import Svelte from "./icons/Svelte.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import JavascriptIcon from "./icons/Javascript.astro";
+import TypescriptIcon from "./icons/Typescript.astro";
+import CloudflareIcon from "./icons/Cloudflare.astro";
+import SupabaseIcon from "./icons/Supabase.astro";
+
 import {getLangFromUrl, Translate} from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const translate = new Translate(lang);
@@ -21,7 +25,7 @@ const TAGS = {
     icon: NextJS,
   },
   TAILWIND: {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
@@ -50,41 +54,62 @@ const TAGS = {
     class: "bg-[#DBC200] text-white",
     icon: JavascriptIcon,
   },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-[#007ACC] text-white",
+    icon: TypescriptIcon,
+  },
+  CLOUDFLARE: {
+    name: "Cloudflare",
+    class: "bg-[#f38020] text-white",
+    icon: CloudflareIcon,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-[#2ECC71] text-white",
+    icon: SupabaseIcon,
+  },
 };
 const PROJECTS = [
   {
-    title: `${translations?.project1?.title}`,
-    description: `${translations?.project1?.description}`,
-    link: "https://spotify-react-eight.vercel.app/",
-    github: "https://github.com/juliant908/spotify",
-    image: "/projects/spotify-clone.png",
-    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.ANGULAR],
-  },
-  {
-    title: `${translations?.project2?.title}`,
-    description: `${translations?.project2?.description}`,
-    link: "https://digital-menu-tba.netlify.app/home?restaurant=la-cueva-de-la-rata",
+    title: `${translations?.projects[1].title}`,
+    description: `${translations?.projects[1].description}`,
+    link: "https://digital-menu-tba.netlify.app/la-cueva-de-la-rata/home",
     image: "/projects/menuDG.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.ANGULAR],
+    tags: [
+      TAGS.ANGULAR,
+      TAGS.TAILWIND,
+      TAGS.CLOUDFLARE,
+      TAGS.SUPABASE,
+      TAGS.TYPESCRIPT,
+    ],
   },
   {
-    title: `${translations?.project3?.title}`,
-    description: `${translations?.project3?.description}`,
-    link: "https://coltropicos.com/",
-    image: "/projects/coltropicosHomePage.png",
-    tags: [TAGS.SVELTE, TAGS.TAILWIND, TAGS.ASTRO],
-  },
-  {
-    title: `${translations?.project4?.title}`,
-    description: `${translations?.project4?.description}`,
+    title: `${translations?.projects[3].title}`,
+    description: `${translations?.projects[3].description}`,
     link: "https://tailwind-animations-website.vercel.app/",
     github: "https://github.com/juliant908/amazing-tailwind-animations",
     image: "/projects/Tailwind-animations.png",
     tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.JAVASCRIPT],
   },
   {
-    title: `${translations?.project5?.title}`,
-    description: `${translations?.project5?.description}`,
+    title: `${translations?.projects[2].title}`,
+    description: `${translations?.projects[2].description}`,
+    link: "https://coltropicos.com/",
+    image: "/projects/coltropicosHomePage.png",
+    tags: [TAGS.TAILWIND, TAGS.ASTRO],
+  },
+  {
+    title: `${translations?.projects[0].title}`,
+    description: `${translations?.projects[0]?.description}`,
+    link: "https://spotify-react-eight.vercel.app/",
+    github: "https://github.com/juliant908/spotify",
+    image: "/projects/spotify-clone.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.ANGULAR],
+  },
+  {
+    title: `${translations?.projects[4].title}`,
+    description: `${translations?.projects[4].description}`,
     link: "https://imdb-redesign-juliant908.netlify.app/",
     github: "https://github.com/juliant908/imdb-redesign",
     image: "/projects/IMDb.png",
